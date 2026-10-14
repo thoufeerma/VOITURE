@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+/* 1. Tailwind CSS v4 Theme Token Mapping */
+@theme {
+  --font-sans: "Neue Haas Grotesk", var(--font-neue-haas), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Montserrat", var(--font-montserrat), sans-serif;
+  --font-heading: "Montserrat", var(--font-montserrat), sans-serif;
+  --font-body: "Neue Haas Grotesk", var(--font-neue-haas), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-gold: #deba76;
+  --color-gold-light: #e6ca8d;
+}
+
+/* 2. Direct @font-face declarations for Neue Haas Grotesk */
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  src: url('/fonts/neue-haas-grotesk/NeueHaasGrot-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  src: url('/fonts/neue-haas-grotesk/NeueHaasGrot-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  src: url('/fonts/neue-haas-grotesk/NeueHaasGrot-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  src: url('/fonts/neue-haas-grotesk/NeueHaasGrot-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  src: url('/fonts/neue-haas-grotesk/NeueHaasGrot-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 3. Global CSS Variables */
+:root {
+  --font-heading-stack: 'Montserrat', var(--font-montserrat), sans-serif;
+  --font-body-stack: 'Neue Haas Grotesk', var(--font-neue-haas), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Neue Haas Grotesk', var(--font-neue-haas), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Montserrat', var(--font-montserrat), sans-serif;
+  --color-gold: #deba76;
+  --color-gold-light: #e6ca8d;
+}
+
+/* 4. Base HTML & Body Typography: Neue Haas Grotesk by default */
+html {
+  background-color: #0b0b0b;
+  color: #ffffff;
+  scroll-behavior: smooth;
+  font-family: 'Neue Haas Grotesk', var(--font-neue-haas), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  font-family: 'Neue Haas Grotesk', var(--font-neue-haas), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 5. Headings & Display Elements: Montserrat */
+h1, h2, h3, h4, h5, h6,
+.font-serif,
+.font-heading {
+  font-family: 'Montserrat', var(--font-montserrat), sans-serif !important;
+}
+
+/* 6. Body & UI Sans Elements: Neue Haas Grotesk */
+.font-sans,
+.font-body {
+  font-family: 'Neue Haas Grotesk', var(--font-neue-haas), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Ensure smooth canvas hardware rendering */
+canvas {
+  image-rendering: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Infinite Brand Carousel Marquee Animation */
+@keyframes brandMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-brand-marquee {
+  display: flex;
+  width: max-content;
+  animation: brandMarquee 26s linear infinite;
+  will-change: transform;
+}
+
+.animate-brand-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Animations for dialogs & popups */
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
